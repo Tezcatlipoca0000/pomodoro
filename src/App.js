@@ -190,16 +190,34 @@ class App extends Component {
 						this.setState({
 							timer: '00:00'
 						});
+						let breakLength = this.state.break;
+						let sessionLength = this.state.break;
 						if (this.state.current === 'Session') {
 							this.setState({
 								current: 'Break',
-								timer: this.state.break
 							});
+							if (breakLength > 9) {
+								this.setState({
+									timer: breakLength + ':00'
+								});
+							} else {
+								this.setState({
+									timer: '0' + breakLength + ':00'
+								});
+							}
 						} else {
 							this.setState({
 								current: 'Session',
-								timer: this.state.session
 							});
+							if (sessionLength > 9) {
+								this.setState({
+									timer: sessionLength + ':00'
+								});
+							} else {
+								this.setState({
+									timer: '0' + sessionLength + ':00'
+								});
+							}
 						}
 					}
 
@@ -213,9 +231,6 @@ class App extends Component {
 	}
 
 	handleReset() {
-		let beep = document.getElementById('beep');
-		beep.pause();
-		beep.currentTime = 0;
 		clearInterval(this.state.interval);
 		this.setState({
 			break: 5,
@@ -224,6 +239,9 @@ class App extends Component {
 			current: 'Session',
 			pause: false
 		});
+		let beep = document.getElementById('beep');
+		beep.pause();
+		beep.currentTime = 0;
 	}				
 
 	render() {
