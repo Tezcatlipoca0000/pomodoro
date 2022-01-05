@@ -8,8 +8,8 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			break: '05:00',
-			session: '25:00',
+			break: 5,
+			session: 25,
 			current: 'Session',
 			timer: '25:00',
 			pause: false,
@@ -35,7 +35,7 @@ class App extends Component {
 				breakLength++;
 				if (breakLength > 9) {
 					this.setState({
-						break: breakLength + ':00'
+						break: breakLength
 					});
 					if (this.state.current === 'Break') {
 						this.setState({
@@ -45,7 +45,7 @@ class App extends Component {
 				} 
 				if (breakLength < 10) {
 					this.setState({
-						break: '0' + breakLength + ':00'
+						break: breakLength
 					});
 					if (this.state.current === 'Break') {
 						this.setState({
@@ -62,7 +62,7 @@ class App extends Component {
 				breakLength--;
 				if (breakLength > 9) {
 					this.setState({
-						break: breakLength + ':00'
+						break: breakLength
 					});
 					if (this.state.current === 'Break') {
 						this.setState({
@@ -72,7 +72,7 @@ class App extends Component {
 				}
 				if (breakLength < 10) {
 					this.setState({
-						break: '0' + breakLength + ':00'
+						break: breakLength
 					});
 					if (this.state.current === 'Break') {
 						this.setState({
@@ -89,7 +89,7 @@ class App extends Component {
 				sessionLength++;
 				if (sessionLength > 9) {
 					this.setState({
-						session: sessionLength + ':00'
+						session: sessionLength
 					});
 					if (this.state.current === 'Session') {
 						this.setState({
@@ -99,7 +99,7 @@ class App extends Component {
 				}
 				if (sessionLength < 10) {
 					this.setState({
-						session: '0' + sessionLength + ':00'
+						session: sessionLength
 					});
 					if (this.state.current === 'Session') {
 						this.setState({
@@ -116,7 +116,7 @@ class App extends Component {
 				sessionLength--;
 				if (sessionLength > 9) {
 					this.setState({
-						session: sessionLength + ':00'
+						session: sessionLength
 					});
 					if (this.state.current === 'Session') {
 						this.setState({
@@ -126,7 +126,7 @@ class App extends Component {
 				}
 				if (sessionLength < 10) {
 					this.setState({
-						session: '0' + sessionLength + ':00'
+						session: sessionLength
 					});
 					if (this.state.current === 'Session') {
 						this.setState({
@@ -218,8 +218,8 @@ class App extends Component {
 		beep.currentTime = 0;
 		clearInterval(this.state.interval);
 		this.setState({
-			break: '05:00',
-			session: '25:00',
+			break: 5,
+			session: 25,
 			timer:'25:00',
 			current: 'Session',
 			pause: false
