@@ -5,10 +5,71 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 5vmin);
+  background-color: #e87a0c;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#appContainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#lengthContainer {
+  display: flex;
+  margin-bottom: 5vh;
+}
+
+#breakBox {
+  margin-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sessionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#break-increment, #session-increment, #reset {
+  margin-left: 2vw;
+}
+
+.iconsRow i:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: calc(10px + 7vmin);
+  }
+
+  #lengthContainer {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  #breakBox {
+    margin-right: 0;
+  }
+
+  #break-increment, #session-increment, #reset {
+    margin-left: 4vw;
+  }
 }

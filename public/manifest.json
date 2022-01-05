@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Pomodoro-Clock",
+  "name": "Pomodoro Clock",
   "icons": [
     {
       "src": "favicon.ico",
